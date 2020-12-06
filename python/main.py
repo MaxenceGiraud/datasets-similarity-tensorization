@@ -4,7 +4,6 @@ import  scipy.linalg as la
 import matplotlib.pyplot as plt
 from scipy.spatial.distance import pdist
 
-#import tensorly as tl
 #%%
 def get_centers(mu=np.zeros(8),std=np.sqrt(5)*np.identity(8),n_cluster=5):
     return  np.random.multivariate_normal(mu,std,size=n_cluster)
@@ -29,32 +28,6 @@ def principal_angles_kr(V,W,n_cluster=5):
 
     return principal_angles
 # %%
-
-n_cluster = 5
-#%%
-centers_v  = get_centers(n_cluster=n_cluster,std=100*np.identity(8))
-centers_w  = get_centers(n_cluster=n_cluster,std=100*np.identity(8))
-
-centers  = get_centers(n_cluster=n_cluster)
-#%%
-
-V = get_data(centers_v,n_data=1000,var=8)
-W = get_data(centers_w,n_data=1000,var=8)
-
-# %%
-VV = la.khatri_rao(V.T,V.T)
-WW = la.khatri_rao(W.T,W.T)
-
-#%%
-bases_v = la.svd(VV)[0][:,:n_cluster]
-bases_w = la.svd(WW)[0][:,:n_cluster]
-
-principal_angles = la.subspace_angles(bases_v,bases_w)
-
-print(principal_angles)
-# %%
-
-
 
 # Making varying variance (of datasets)
 n_cluster = 5
@@ -101,7 +74,7 @@ plt.show()
 # %%
 
 
-## MAking cluster centers variance vary
+##### Making cluster centers variance vary
 
 
 n_cluster = 5
