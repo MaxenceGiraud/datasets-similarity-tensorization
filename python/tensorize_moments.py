@@ -1,5 +1,5 @@
 import numpy as np
-from scipy.stats import moment
+from tensorly.tenalg import higher_order_moment
 
 def tensorize_thirdordermoment(V):
     Vmu = V - V.mean(axis=0)
@@ -14,7 +14,7 @@ def tensorize_thirdordermoment(V):
         ei[i] = 1
         D = D + np.outer(np.outer(d,ei),ei) + np.outer(np.outer(ei,d),ei) + np.outer(np.outer(ei,ei),d)
     D = D.reshape(V.shape[1],V.shape[1],V.shape[1])
-    moment3 = moment(V,3,axis=0)
+    moment3 = higher_order_moment(V,3)
     VV = D - moment3
 
     return VV
