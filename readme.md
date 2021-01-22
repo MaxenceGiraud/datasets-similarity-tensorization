@@ -1,6 +1,6 @@
 # Datasets similarity via Tensorization
 
-In this work we implements algorithms based on the preprint "Determining whether two datasets cluster similarly without determining the clusters" by Van Eeghem et al. [1].
+In this work we implement algorithms based on the preprint "Determining whether two datasets cluster similarly without determining the clusters" by Van Eeghem et al. [1].
 
 This work was an initial part of a research project by [Maxence Giraud](https://github.com/MaxenceGiraud) on "highest order clustering" supervized by [Remy Boyer](https://pro.univ-lille.fr/remy-boyer/). 
 
