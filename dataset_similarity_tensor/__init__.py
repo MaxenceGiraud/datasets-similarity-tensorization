@@ -1,0 +1,3 @@
+from .principal_angles import principal_angles_tensors
+from .tensorize_kronecker import tensorize_kr
+from .tensorize_moments import tensorize_thirdordermoment
